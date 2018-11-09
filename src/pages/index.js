@@ -1,36 +1,56 @@
 import React from "react";
-import Header from "../components/header";
-import { Link } from "gatsby";
+import Layout from "../components/layout";
+import { graphql } from "gatsby";
+import Img from "gatsby-image";
+import styles from "./index.module.css";
+import stylesBlock from "./blockquote.module.css";
 
-export default () => (
-  <div style={{ margin: `3rem auto`, maxWidth: 600 }}>
-    <h1>Richard Hamming on Luck</h1>
+const Index = ({ data }) => (
+  <Layout>
+    <div className={styles.titleWrapper}>
+      <Img
+        fixed={data.file.childImageSharp.fixed}
+        alt={"Contemplations App Icon"}
+        className={styles.appIcon}
+      />
+      <h2 className={styles.title}>Bible Journal App</h2>
+      <h3 className={styles.tag}>
+        Get into the Word, until the Word gets into you.
+      </h3>
+    </div>
     <div>
       <p>
-        From Richard Hamming’s classic and must-read talk, “
-        <a href="http://www.cs.virginia.edu/~robins/YouAndYourResearch.html">
-          You and Your Research
-        </a>
-        ”.
+        A simple journal app that lets you write down what you're learning as
+        you read the Bible. Saving your notes for later reflections. As well as
+        share you're thoughts with friends or the entire Contemplations
+        community.
       </p>
-      <blockquote>
+      <blockquote className={stylesBlock.blockquote}>
         <p>
-          There is indeed an element of luck, and no, there isn’t. The prepared
-          mind sooner or later finds something important and does it. So yes, it
-          is luck.{" "}
-          <em>
-            The particular thing you do is luck, but that you do something is
-            not.
-          </em>
+          There’s nothing like the written Word of God for showing you the way
+          to salvation through faith in Christ Jesus. Every part of Scripture is
+          God-breathed and useful one way or another—showing us truth, exposing
+          our rebellion, correcting our mistakes, training us to live God’s way.
+          Through the Word we are put together and shaped up for the tasks God
+          has for us.
+        </p>
+        <p style={{ textAlign: "right" }}>
+          <em>2 Timothy 3:16-17 (MSG)</em>
         </p>
       </blockquote>
     </div>
-    <p>Posted April 09, 2011</p>
-    <Link to="/contact/">Contacta</Link>
-    <Link to="/about/">About</Link>
-    <Header headerText="Contemplations" />
-    <h1>Hello world!</h1>
-    <p>What a world.</p>
-    <img src="https://source.unsplash.com/random/400x200" alt="" />
-  </div>
+  </Layout>
 );
+export default Index;
+
+export const pageQuery = graphql`
+  query {
+    file(relativePath: { eq: "AppIcon.jpg" }) {
+      childImageSharp {
+        fixed(width: 125, height: 125, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;

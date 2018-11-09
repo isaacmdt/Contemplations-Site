@@ -1,0 +1,24 @@
+.titleWrapper {
+  text-align: center;
+  margin-bottom: 2em;
+  margin-top: 2.5em;
+}
+
+.appIcon {
+  margin-right: auto;
+  margin-left: auto;
+  display: block !important;
+  overflow: visible !important;
+  margin-bottom: 1.2em;
+}
+
+.title {
+  margin-bottom: 0.2em;
+}
+
+.tag {
+  margin-top: 0.1em;
+  margin-bottom: 2em;
+  font-weight: 500;
+  font-size: 1.2em;
+}

@@ -1,0 +1,10 @@
+.blockquote {
+  border-left: 0.39rem solid rgba(92, 196, 190, 1);
+  background-color: rgba(92, 196, 190, 0.1);
+  padding-top: 1em;
+  padding-right: 1.5em;
+  padding-bottom: 2em;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 2em;
+}

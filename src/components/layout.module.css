@@ -1,0 +1,30 @@
+.container {
+  margin: 0 auto;
+  max-width: 550px;
+  padding: 0 1rem;
+}
+
+.siteTitle {
+  font-weight: 700;
+  color: rgba(28, 94, 154, 1);
+}
+.linkLI {
+  display: inline-block;
+  margin-right: 1em;
+  color: rgba(28, 94, 154, 1);
+}
+
+.header {
+  margin-bottom: 1.5em;
+  margin-top: 2rem;
+}
+
+.header h3 {
+  display: inline;
+}
+.footer {
+  margin-top: 2em;
+  text-align: center;
+  background-color: rgba(28, 94, 154, 0.1);
+  padding-bottom: 0.5em;
+}
