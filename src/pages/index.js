@@ -9,7 +9,7 @@ const Index = ({ data }) => (
   <Layout>
     <div className={styles.titleWrapper}>
       <Img
-        fixed={data.file.childImageSharp.fixed}
+        fixed={data.appIcon.childImageSharp.fixed}
         alt={"Contemplations App Icon"}
         className={styles.appIcon}
       />
@@ -24,6 +24,12 @@ const Index = ({ data }) => (
         you read the Bible. Saving your notes for later reflections. As well as
         share you're thoughts with friends or the entire Contemplations
         community.
+      </p>
+      <p>
+        <Img
+          fluid={data.image1.childImageSharp.fluid}
+          alt={"Contemplations Bibly Study"}
+        />
       </p>
       <blockquote className={stylesBlock.blockquote}>
         <p>
@@ -45,10 +51,18 @@ export default Index;
 
 export const pageQuery = graphql`
   query {
-    file(relativePath: { eq: "AppIcon.jpg" }) {
+    appIcon: file(relativePath: { eq: "AppIcon.jpg" }) {
       childImageSharp {
         fixed(width: 125, height: 125, quality: 100) {
           ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    image1: file(relativePath: { eq: "bibleOpen.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 550, quality: 100) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
